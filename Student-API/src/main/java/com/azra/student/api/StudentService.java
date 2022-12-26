@@ -24,4 +24,8 @@ public class StudentService {
         student.setId(id);
         studentRepository.save(student);
     }
+
+    public void deleteStudent(String id) {
+        studentRepository.delete(studentRepository.findById(id).get());
+    }
 }
