@@ -10,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 public class StudentController {
     private final StudentService studentService;
+
     @GetMapping
     public List<Student> getAllStudent() {
         return studentService.getAllStudents();
@@ -23,5 +24,10 @@ public class StudentController {
     @PostMapping
     public void addStudent (@RequestBody Student student) {
         studentService.addStudent(student);
+    }
+
+    @PutMapping("/student/{id}")
+    public void updateStudent (@RequestBody Student student, @PathVariable String id) {
+        studentService.updateStudent(student, id);
     }
 }

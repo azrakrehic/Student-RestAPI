@@ -19,4 +19,9 @@ public class StudentService {
     public void addStudent(Student student) {
         studentRepository.insert(student);
     }
+
+    public void updateStudent(Student student, String id) {
+        student.setId(id);
+        studentRepository.save(student);
+    }
 }
