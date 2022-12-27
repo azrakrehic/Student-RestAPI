@@ -16,6 +16,10 @@ public class StudentService {
      return studentRepository.findStudentByEmail(email).get();
     }
 
+    public Student getStudentById(String id) {
+        return studentRepository.findStudentById(id).get();
+    }
+
     public void addStudent(Student student) {
         studentRepository.insert(student);
     }

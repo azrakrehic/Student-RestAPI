@@ -16,9 +16,14 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-    @GetMapping("/student/{email}")
+    @GetMapping("/student/get/{email}")
     public Student getStudentByEmail(@PathVariable String email) {
         return studentService.getStudentByEmail(email);
+    }
+
+    @GetMapping("/student/{id}")
+    public Student getStudentById(@PathVariable String id) {
+        return studentService.getStudentById(id);
     }
 
     @PostMapping
